@@ -1,5 +1,7 @@
 # tor-rotate-proxy
 
+Turn Tor proxies into a rotate proxy.
+
 # ENVS
 
 Change `RANGE_FROM` and `RANGE_TO` in `Dockerfile` if you want to increase/decrease the number of Tor proxies.
