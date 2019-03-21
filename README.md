@@ -1,15 +1,24 @@
-# tor-rotate
+# tor-rotate-proxy
 
-# BUILD
+# ENVS
+
+Change `RANGE_FROM` and `RANGE_TO` in `Dockerfile` if you want to increase/decrease the number of Tor proxies.
+Default is 4100 to 4120, so 20 proxies.
+
+# Build
 
 ```sh
-docker build . -t tor-rotate
+docker build . -t tor-rotate-proxy
 ```
 
-# RUN
+# Run
 
 ```sh
-docker run -d -p 9100 tor-rotate
+docker run -d -p 9100:9100 tor-rotate-proxy
 ```
 
-Check the port in `docker ps`
+# Use
+
+```sh
+curl --socks5 localhost:9100 api.ipify.org
+```
